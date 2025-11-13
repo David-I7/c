@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "stdbool.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "iostream": "cpp",
+        "vector.h": "c",
+        "set.h": "c",
+        "matrice_dreptunghiulara.h": "c"
+    }
+
+}
