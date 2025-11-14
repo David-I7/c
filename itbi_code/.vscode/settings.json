@@ -10,7 +10,11 @@
         "iostream": "cpp",
         "vector.h": "c",
         "set.h": "c",
-        "matrice_dreptunghiulara.h": "c"
+        "matrice_dreptunghiulara.h": "c",
+        "unistd.h": "c",
+        "random": "c",
+        "signal-defs.h": "c",
+        "types.h": "c"
     }
 
 }
