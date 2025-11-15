@@ -25,13 +25,16 @@ int print_tree(const char* dirname,int depth){
         return -1;
     }
 
-    chdir(dirname);
-    char * space = gen_space(depth);
+    if (chdir(dirname)) return -1;
+    char* space = gen_space(depth);
     struct dirent* dirent;
     struct stat st;
     while((dirent = readdir(dir)) != NULL){
        if (strcmp(dirent->d_name,".") == 0 || strcmp(dirent->d_name,"..") == 0) continue;
-       lstat(dirent->d_name,&st);
+       if (lstat(dirent->d_name,&st) == -1){
+            perror(dirent->d_name);
+            continue;
+       };
        if (S_ISDIR(st.st_mode)){
         printf("%s",space);
         printf("%s\n",dirent->d_name);
@@ -50,6 +53,8 @@ int print_tree(const char* dirname,int depth){
 
 int main(int argc, char** argv){
     printf(".\n");
-    print_tree(".",2);
+    if(print_tree(".",2)){
+        perror("tree");
+    };
     return 0;
 }

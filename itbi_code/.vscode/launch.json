@@ -6,12 +6,20 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/a.out",
-      "args": ["mmap.txt"],
+      "args": ["-n", "2", "echo", "hello"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
       "externalConsole": false,
       "MIMode": "gdb",
-      "miDebuggerPath": "/usr/bin/gdb"
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+        "text": "set follow-fork-mode child"
+    },
+    {
+        "text": "set detach-on-fork off"
+    }
+      ]
     }
 ]}
