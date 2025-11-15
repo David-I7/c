@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv){
     if (argc < 2){
-        fprintf(stderr,"Mod de utiliizare: %s [OPTIUNI...] [FISIERE...]\n",argv[0]);
+        fprintf(stderr,"Mod de utiliizare: %s [OPTIUNI...] FISIERE...\n",argv[0]);
         exit(EXIT_FAILURE);
     }
     int options = 0;
@@ -14,7 +14,7 @@ int main(int argc, char** argv){
         if (argv[i][0] == '-'){
             int len =strlen(argv[i]);
             if (len < 2){
-                fprintf(stderr,"Optiune invalida: %s\n",argv[i]);
+                fprintf(stderr,"Optiune omisa pentru argumentul %d\n",i);
                 exit(EXIT_FAILURE); 
             }
             for(int j = 1; j < len;j++){
@@ -43,8 +43,7 @@ int main(int argc, char** argv){
     if (fileIndex == 0){
         fprintf(stderr,"Niciun fisier nu a fost specificat\n");
         exit(EXIT_FAILURE); 
-    }
-   if(fileIndex == 1) options = 7;
+    }else if(fileIndex == 1) options = 7;
 
     unsigned long long ct=0,wt=0,lt=0;
     int size = 4096;
