@@ -6,7 +6,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/a.out",
-      "args": ["-n", "2", "echo", "hello"],
+      "args": ["eum iure","substr.txt"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

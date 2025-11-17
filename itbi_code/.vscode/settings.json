@@ -14,7 +14,9 @@
         "unistd.h": "c",
         "random": "c",
         "signal-defs.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "binarytree.h": "c",
+        "ctype.h": "c"
     }
 
 }

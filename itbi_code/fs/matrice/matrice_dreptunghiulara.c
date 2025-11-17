@@ -1,5 +1,4 @@
 #include "matrice_dreptunghiulara.h"
-#include "../../dts/Vector.h"
 #include "string.h"
 
 struct tuple matrix_size;
