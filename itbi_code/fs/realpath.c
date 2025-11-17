@@ -6,7 +6,7 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include "../dts/Vector.h"
+#include "../dts/vector.h"
 
 const char DELIMITER[2] = "/";
 
@@ -43,13 +43,13 @@ int main(int argc,char** argv){
             dir =".";
             char* fileName = malloc(sizeof(char) * (strlen(argv[1]) + 1));
             strcpy(fileName,argv[1]);
-            vector_push(fileNames,fileName);
+            vectorPush(fileNames,fileName);
         }else{
             // path-ul a fost de ex a/fisier.txt
             argv[1][r] = '\0';
             char* fileName = malloc(sizeof(char) * (strlen(argv[r+1]) + 1));
             strcpy(fileName,&argv[1][r+1]);
-            vector_push(fileNames,fileName);
+            vectorPush(fileNames,fileName);
             dir = argv[1];
         }
     }
@@ -85,6 +85,6 @@ int main(int argc,char** argv){
         printf("%s/",((char*)(fileNames->buf[i])));
     }
     printf("%s\n",((char*)(fileNames->buf[0])));
-    vector_free(fileNames);
+    vectorFree(fileNames);
     exit(EXIT_SUCCESS);
 }
