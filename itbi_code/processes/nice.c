@@ -43,7 +43,7 @@ int main(int argc, char** argv){
             exit(EXIT_FAILURE);
         }
         if (!fork()){
-            execvp(argv[1],(char *const *)NULL);
+            execlp(argv[1],argv[1],(char *)NULL);
             perror(argv[1]);
             exit(EXIT_FAILURE);
         }else{

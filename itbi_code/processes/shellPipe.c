@@ -5,7 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 
-char ldc[4096], *argv[4096], *p;
+char ldc[4096], *argv[1024], *p;
 int argc, inword, nrComenzi, indexComenzi[100];
 
 int main(){
